@@ -1,0 +1,127 @@
+/* Universal Box-Sizing and Font Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif; /* Changed font for a modern feel */
+}
+
+/* Body Styling for Centering and Background */
+body {
+  background: linear-gradient(to right top, #6a82fb, #fc5c7d); /* Subtle gradient background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Use min-height for better responsiveness */
+  margin: 0; /* Ensure no default body margin */
+}
+
+/* Calculator Container - Professional Touch */
+.calculator {
+  background: #ffffff;
+  border-radius: 20px; /* Slightly larger border-radius for softer edges */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18), 0 5px 15px rgba(0, 0, 0, 0.12); /* Slightly stronger shadow for smaller size */
+  width: 280px; /* Reduced width */
+  padding: 20px; /* Adjusted padding for smaller size */
+  border: 1px solid rgba(255, 255, 255, 0.6); /* Slightly more visible border for definition */
+  backdrop-filter: blur(5px); /* Adds a subtle frosted glass effect */
+  -webkit-backdrop-filter: blur(5px); /* For Safari compatibility */
+  position: relative; /* Needed for pseudo-elements */
+  overflow: hidden; /* Ensures inner elements don't spill */
+}
+
+/* Optional: Add a subtle inner glow/gradient for more depth and shine */
+.calculator::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)); /* More pronounced highlight */
+  border-radius: 20px;
+  pointer-events: none; /* Allows clicks to pass through */
+}
+
+/* Display Screen - Sleek and Readable */
+.display {
+  background: linear-gradient(135deg, #34495e, #2c3e50); /* Subtle gradient for a bit of shine */
+  color: #ecf0f1; /* Lighter text for contrast */
+  font-size: 2.2rem; /* Adjusted font size for smaller display */
+  padding: 20px; /* Adjusted padding */
+  border-radius: 15px; /* Softer border-radius */
+  text-align: right;
+  overflow-x: auto;
+  margin-bottom: 20px; /* Space between display and buttons */
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.2); /* Adjusted inner shadow */
+  font-weight: 300; /* Lighter font weight for a modern look */
+  letter-spacing: 0.8px; /* Subtle letter spacing */
+}
+
+/* Buttons Grid Layout */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px; /* Slightly increased gap */
+}
+
+/* Individual Button Styles */
+.btn {
+  padding: 18px; /* Adjusted padding */
+  font-size: 1.2rem; /* Slightly larger font */
+  border: none;
+  border-radius: 12px; /* Softer border-radius */
+  background: linear-gradient(135deg, #f0f0f0, #e0e0e0); /* Subtle gradient for button shine */
+  color: #333333; /* Darker text for better readability */
+  cursor: pointer;
+  transition: all 0.2s ease; /* Smoother transition */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Subtle button shadow */
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #e8e8e8, #d5d5d5);
+  transform: translateY(-1px); /* Lift effect on hover */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.btn:active {
+  transform: translateY(0); /* Press effect */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Reduced shadow on active */
+}
+
+/* Operator Buttons */
+.operator {
+  background: linear-gradient(135deg, #b4d4ed, #a9cce3); /* Softer blue for operators */
+  color: #2c3e50; /* Darker text for operators */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.operator:hover {
+  background: linear-gradient(135deg, #a3c3de, #95b8d1);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.operator:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Equal Button */
+.equal {
+  grid-column: span 2;
+  background: linear-gradient(135deg, #38ae66, #27ae60); /* Professional green for equal */
+  color: #ffffff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+}
+
+.equal:hover {
+  background: linear-gradient(135deg, #319d5a, #229954); /* Darker green on hover */
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.equal:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
